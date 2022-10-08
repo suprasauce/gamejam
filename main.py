@@ -36,6 +36,7 @@ while(run):
         
     for water in waters:
         water.draw(screen,offset)
+        water.update()
 
     bansal.get_input()
     scroll, offset = bansal.move(platforms, offset)
