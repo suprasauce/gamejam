@@ -17,7 +17,7 @@ class Water:
     random.seed(None)
 
     for i in range(6):
-        point_xy = py.Vector2(self.position.x+random.randint(2, 32)+i*random.randint(6, 9), self.position.y+random.randint(12, 52))
+        point_xy = py.Vector2(self.position.x+random.randint(2, 32)+i*random.randint(6, 9), self.position.y+random.randint(20, 52))
         self.points.append([point_xy, random.randint(1,359)])
 
   def wave(self, point: py.Vector2, sin_input: int):
@@ -39,7 +39,7 @@ class Water:
         for i in range(1,7,2):
           offset = py.Vector2((of+i*constants.PLATFORM_SEPRATION/7,0))
           py.draw.line(display, self.high_light_color, point[0]+offset-vector_width, point[0]+offset+vector_width)
-          
+
   def draw(self,screen,offset):
     self.surface.fill(colors.DARK_BLUE);
     screen.blit(self.surface, (self.position.x+offset, self.position.y))
